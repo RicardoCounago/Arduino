@@ -95,4 +95,61 @@ void loop() {
   }
   delay (1000) ;
 }
+ ejer_2 Alterno
+ 
+ void setup() {
+  // put your setup code here, to run once:
+    for ( int i = 12 ; i <= 14 ; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
 
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+    
+  
+  digitalWrite( 12 , HIGH) ;
+  digitalWrite( 14 , HIGH) ;
+  digitalWrite( 13 , LOW) ;
+  
+  
+  delay (1000) ;
+  
+ 
+  digitalWrite( 12 , LOW) ;
+  digitalWrite( 14 , LOW) ;
+  digitalWrite( 13 , HIGH) ;
+ 
+  delay (1000) ;
+}
+
+Ejercio 3
+
+void setup() {
+  // put your setup code here, to run once:
+    for ( int i = 12 ; i <= 15 ; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
+ pinMode(5, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+    
+  for (int i=12 ; i <= 15 ; i++)
+  {
+       digitalWrite( i , HIGH) ;
+       delay (200) ;
+       digitalWrite( i , LOW);
+       delay (200) ;
+  }
+  tone(5,800);
+  delay(500);
+  noTone(5);
+
+}
+
+*-*-*-*-*-*
