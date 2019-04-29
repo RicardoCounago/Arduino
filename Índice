@@ -68,3 +68,31 @@ void loop() {
   }
 
 }
+
+ejer_2 a la vez
+void setup() {
+  // put your setup code here, to run once:
+    for ( int i = 12 ; i <= 14 ; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+    
+      for ( int i = 12 ; i <= 14 ; i++)
+  {
+    digitalWrite( i , HIGH) ;
+  }
+  
+  delay (1000) ;
+  
+   for ( int i = 12 ; i <= 14 ; i++)
+  {
+    digitalWrite( i , LOW) ;
+  }
+  delay (1000) ;
+}
+
