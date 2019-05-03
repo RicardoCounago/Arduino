@@ -182,3 +182,40 @@ void loop()
             }
 
 }
+
+
+ejer_05 MotorBoton
+
+#include <Servo.h>                    // Incluir la librería Servo
+Servo servo1;                         // Crear un objeto tipo Servo llamado servo1
+int angulo = 0 ;
+int pin=13;
+void setup()
+{
+  Serial.begin(9600); 
+  servo1.attach(pin) ;             // Conectar servo1 al pin D7
+  pinMode(14,INPUT);      //D5
+}
+
+void loop()
+{
+  
+
+     for(angulo  = 0; angulo  <= 180; angulo  += 1)   //incrementa angulo 1 grado
+            {
+              if(digitalRead(14)==HIGH){
+                 servo1.write(angulo);
+                 Serial.println(angulo);
+ 
+                 delay(25);
+               }
+            }
+        for(angulo  = 180; angulo  >=0; angulo  -=1 )    //decrementa angulo 1 grado
+            {
+              if(digitalRead(14)==HIGH){
+               Serial.println(angulo);
+                 servo1.write( angulo );
+                 delay(25);
+              }
+            }
+}
