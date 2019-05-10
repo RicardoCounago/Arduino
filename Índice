@@ -183,7 +183,7 @@ void loop()
 
 }
 
-
+*-*-*-*--*-*-*-*-
 ejer_05 MotorBoton
 
 #include <Servo.h>                    // Incluir la librería Servo
@@ -221,9 +221,10 @@ void loop()
 }
 
 
+*/*/*/*/*/*/**/
+sensor Proximidad
 
-sensor
-
+ 
 int trigPin = 14;    // Trigger
 int echoPin = 12;    // Echo
 long duration, cm, inches;
@@ -234,6 +235,7 @@ void setup() {
   //Define inputs and outputs
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+  pinMode(13, OUTPUT);
 }
  
 void loop() {
@@ -254,7 +256,11 @@ void loop() {
   cm = (duration/2) / 29.1;     // Divide by 29.1 or multiply by 0.0343
   inches = (duration/2) / 74;   // Divide by 74 or multiply by 0.0135
 
-  
+  if(cm<20){
+    digitalWrite(13, HIGH);
+    }else{
+      digitalWrite(13, LOW);
+    }
   
   Serial.print(inches);
   Serial.print("in, ");
